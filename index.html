@@ -292,6 +292,13 @@
 
         footer { padding: 80px 5%; background: #fff; color: #64748b; text-align: center; border-top: 1px solid #eee; }
 
+        /* --- PHOTO GALLERY HOVER EFFECTS --- */
+        .photo-card:hover img {
+            transform: scale(1.08);
+        }
+        .photo-card:hover .photo-overlay {
+            opacity: 1 !important;
+        }
     </style>
 </head>
 <body>
@@ -300,18 +307,19 @@
         <div class="logo-container">
             <img src="logo.png" alt="AUTO RESPONSE LOGO">
         </div>
-        <div class="nav-links">
+<div class="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
+            <a href="#gallery">Photos</a> <!-- Added this line -->
             <a href="#work">Work</a>
             <a href="#contact">Contact</a>
-        </div>
-    </nav>
+           </nav>
+  </div>   
 
     <section id="home" class="hero">
         <div class="video-background">
             <iframe 
-                src="https://player.vimeo.com/video/1145505954?background=1&autoplay=1&loop=1&muted=1" 
+                src="https://player.vimeo.com/video/1197251590?background=1&autoplay=1&loop=1&muted=1" 
                 frameborder="0" allow="autoplay; fullscreen" 
                 style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 177.77vw; min-height: 100vh; min-width: 56.25vh; transform: translate(-50%, -50%); pointer-events: none;">
             </iframe>
@@ -379,6 +387,44 @@
             </div>
         </div>
     </section>
+<!-- --- PHOTOS ONLY GALLERY --- -->
+    <section id="gallery" style="background: #f1f5f9; padding-top: 80px; border-top: 1px solid #eee;">
+        <div style="text-align: center;">
+            <h2 class="section-title">Behind The Builds</h2>
+            <p style="margin-bottom: 50px; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted);">
+                Wiring Precision &amp; Behind-the-Scenes Craftsmanship
+            </p>
+        </div>
+
+        <!-- 3-Column Photo Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 100%;">
+            
+            <!-- Photo 1: Wiring Detail -->
+            <div class="photo-card" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-glass);">
+                <img src="wiring1.jpg" alt="Precision Emergency Wiring" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                <div class="photo-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: 0.3s ease;">
+                    <span style="color: white; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Marine-Grade Wiring Loom</span>
+                </div>
+            </div>
+
+            <!-- Photo 2: Console Build -->
+            <div class="photo-card" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-glass);">
+                <img src="build1.jpg" alt="Console Tech Integration" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                <div class="photo-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: 0.3s ease;">
+                    <span style="color: white; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Custom Console Layout</span>
+                </div>
+            </div>
+
+            <!-- Photo 3: Behind the Scenes -->
+            <div class="photo-card" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-glass);">
+                <img src="wiring2.jpg" alt="Fail-Safe Fuse Blocks" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                <div class="photo-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: 0.3s ease;">
+                    <span style="color: white; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Fail-Safe Power Management</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section id="work" style="background: #f8fafc; padding-top: 80px;">
         <div style="text-align: center;">
@@ -427,6 +473,38 @@
                 <div class="video-title">Response with Excellence</div>
             </div>
 
+             <div class="video-card" onclick="openVideo('https://player.vimeo.com/video/1197251590')">
+                <div style="position:relative; padding-top:56.25%; pointer-events: none;">
+                    <iframe src="https://player.vimeo.com/video/1197251590?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
+                </div>
+                <div class="video-overlay"><div class="play-btn"></div></div>
+                <div class="video-title">Response with Authority</div>
+            </div>
+
+             <div class="video-card" onclick="openVideo('https://player.vimeo.com/video/1186614896')">
+                <div style="position:relative; padding-top:56.25%; pointer-events: none;">
+                    <iframe src="https://player.vimeo.com/video/1186614896?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
+                </div>
+                <div class="video-overlay"><div class="play-btn"></div></div>
+                <div class="video-title">Response with Power</div>
+            </div>
+
+             <div class="video-card" onclick="openVideo('https://player.vimeo.com/video/1197479353')">
+                <div style="position:relative; padding-top:56.25%; pointer-events: none;">
+                    <iframe src="https://player.vimeo.com/video/1197479353?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
+                </div>
+                <div class="video-overlay"><div class="play-btn"></div></div>
+                <div class="video-title">Response with Command</div>
+            </div>
+
+             <div class="video-card" onclick="openVideo('https://player.vimeo.com/video/1178086715')">
+                <div style="position:relative; padding-top:56.25%; pointer-events: none;">
+                    <iframe src="https://player.vimeo.com/video/1178086715?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
+                </div>
+                <div class="video-overlay"><div class="play-btn"></div></div>
+                <div class="video-title">Response with Visibility</div>
+            </div>
+
             <div class="video-card" onclick="openVideo('https://player.vimeo.com/video/1158687889')">
                 <div style="position:relative; padding-top:56.25%; pointer-events: none;">
                     <iframe src="https://player.vimeo.com/video/1158687889?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
@@ -448,7 +526,7 @@
                     <iframe src="https://player.vimeo.com/video/1186614324?background=1" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0"></iframe>
                 </div>
                 <div class="video-overlay"><div class="play-btn"></div></div>
-                <div class="video-title">Response with Integrity</div>
+                <div class="video-title">Response with Reliability</div>
             </div>
 
 <div class="video-card" onclick="openVideo('https://adilo.bigcommand.com/watch/laiqs7gC')">
